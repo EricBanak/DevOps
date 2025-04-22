@@ -131,3 +131,6 @@ elif padrao == "5-4-1":
 
 else:
     print("O padrao selecionado eh invalido.")
+
+
+print("commit três")
