@@ -7,7 +7,7 @@ valor2 = int(input("Digite outro valor: "))
 soma = valor1 + valor2
 print(valor1, "+", valor2, "=", soma)
 
-# ex 3: Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+# ex 3: Faça um Programa que peça as 4 notas bimestrais e mostre a média...
 
 nota1 = float(input("Nota do primeiro bimestre: "))
 nota2 = float(input("Nota do segundo bimestre: "))
@@ -131,3 +131,9 @@ elif padrao == "5-4-1":
 
 else:
     print("O padrao selecionado eh invalido.")
+
+
+print("commit três")
+print("commit quatro")
+print("commit quinto")
+print("commit sexto")
