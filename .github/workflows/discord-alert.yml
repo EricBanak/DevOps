@@ -3,7 +3,7 @@ name: Discord Alert on Push or Merge
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   notify-discord:
