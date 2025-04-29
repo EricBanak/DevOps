@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send notification to Discord
-        uses: Ilshidur/action-discord@master
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          message: "🚀 Novo push ou merge no branch **main**!\nCommit por: ${{ github.actor }}\nMensagem: ${{ github.event.head_commit.message }}"
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_AUTHOR: ${{ github.actor }}
+        run: |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d "{\"content\": \"🚀 Novo push ou merge no branch **master**!\nAutor: ${COMMIT_AUTHOR}\nMensagem: ${COMMIT_MESSAGE}\"}" \
+            $DISCORD_WEBHOOK
