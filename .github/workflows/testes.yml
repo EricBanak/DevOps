@@ -3,14 +3,14 @@ name: Testes Unitários
 on:
   push:
     branches:
-      - master
+      - master  # Ou a branch que você está usando (ex: main)
   pull_request:
     branches:
-      - master
+      - master  # Ou a branch que você está usando
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Roda em uma máquina virtual com Ubuntu
 
     steps:
       # Faz checkout do código
@@ -21,7 +21,7 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11' 
+          python-version: '3.11'  # Ou qualquer versão do Python que você esteja usando
 
       # Instala dependências
       - name: Instalar dependências
@@ -29,4 +29,4 @@ jobs:
 
       # Rodar os testes unitários
       - name: Rodar os testes unitários
-        run: python teste_unitario.py  # Executa o seu script de testes
+        run: python tests/teste_unitario.py  # Caminho correto para o arquivo de testes
